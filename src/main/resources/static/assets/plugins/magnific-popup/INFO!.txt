@@ -1,0 +1,2 @@
+https://dimsemenov.com/plugins/magnific-popup/
+https://github.com/dimsemenov/Magnific-Popup

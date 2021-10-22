@@ -1,0 +1,2 @@
+https://www.virtuosoft.eu/code/bootstrap-touchspin/
+https://github.com/istvan-ujjmeszaros/bootstrap-touchspin

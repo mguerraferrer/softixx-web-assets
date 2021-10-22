@@ -1,0 +1,3 @@
+https://markgoodyear.com/2013/01/scrollup-jquery-plugin/
+https://markgoodyear.com/labs/scrollup/?theme=image
+https://github.com/markgoodyear/scrollup

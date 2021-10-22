@@ -1,0 +1,3 @@
+https://swiperjs.com/get-started
+https://swiperjs.com/demos
+https://unpkg.com/browse/swiper@6.5.9/

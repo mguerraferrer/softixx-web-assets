@@ -1,0 +1,2 @@
+https://fooplugins.github.io/FooTable/index.html
+https://github.com/fooplugins/FooTable

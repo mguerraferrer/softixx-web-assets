@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.mguerraferrer</groupId>
+    <artifactId>softixx-web-assets</artifactId>
+    <version>1.0.0</version>
+	<name>SoftIXX Web Assets</name>
+	<description>SoftIXX Web Assets Project</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<minify-maven-plugin.version>1.7.6</minify-maven-plugin.version>
+		<closure-compiler-maven-plugin.version>2.21.0</closure-compiler-maven-plugin.version>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+    </properties>
+    
+    <build>
+		<plugins>
+			<!-- Minify Maven Plugin -->
+			<!-- https://samaxes.github.io/minify-maven-plugin/ -->
+			<!-- https://github.com/samaxes/minify-maven-plugin -->
+			<!-- https://medium.com/programming-sharing/minifying-and-combining-js-and-css-files-with-maven-b8a661bf6bf8 -->
+			<plugin>
+				<groupId>com.samaxes.maven</groupId>
+				<artifactId>minify-maven-plugin</artifactId>
+				<version>${minify-maven-plugin.version}</version>
+				<executions>
+				    <execution>
+				        <phase>prepare-package</phase>
+				        <id>default-minify</id>
+				        <configuration>
+				            <charset>UTF-8</charset>
+				            <webappSourceDir>${project.basedir}/src/main/resources/static/assets</webappSourceDir>
+							<webappTargetDir>${project.build.directory}/classes</webappTargetDir>
+							<skipMerge>true</skipMerge>
+				            <!-- Stylesheet configuration -->
+				            <cssSourceDir>css</cssSourceDir>
+							<cssTargetDir>static/assets/css</cssTargetDir>
+				            <cssSourceFiles>
+				                <cssSourceFile>softixx.main.css</cssSourceFile>
+				            </cssSourceFiles>
+							<cssFinalFile>softixx.main</cssFinalFile>
+				            <!-- Javascript configuration
+							<jsEngine>CLOSURE</jsEngine>
+				            <jsSourceDir>js</jsSourceDir>
+							<jsTargetDir>static/assets/js</jsTargetDir>
+				            <jsSourceFiles>
+				                <jsSourceFile>softixx.main.js</jsSourceFile>
+				            </jsSourceFiles>
+							<jsFinalFile>softixx.main</jsFinalFile>-->
+				        </configuration>
+				        <goals>
+				            <goal>minify</goal>
+				        </goals>
+				    </execution>
+				</executions>
+			</plugin>
+			<!--Closure Compiler Maven Plugin-->
+			<!--https://blutorange.github.io/closure-compiler-maven-plugin/-->
+			<plugin>
+				<groupId>com.github.blutorange</groupId>
+				<artifactId>closure-compiler-maven-plugin</artifactId>
+				<version>${closure-compiler-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>default-minify</id>
+						<phase>prepare-package</phase><!-- When omitted defaults to 'process-resources' -->
+						<configuration>
+							<!-- These are the defaults -->
+							<encoding>UTF-8</encoding>
+							<baseSourceDir>${project.basedir}/src/main/resources/static/assets</baseSourceDir>
+							<baseTargetDir>${project.build.directory}/classes/static/assets</baseTargetDir>
+							<sourceDir>js</sourceDir>
+							<targetDir>js</targetDir>
+							<force>true</force>
+							<!-- List of files to process. May use wildcards. -->
+							<includes>
+								<include>softixx.main.js</include>
+							</includes>
+							<excludes>
+								<exclude>softixx.main.min.js</exclude>
+							</excludes>
+							<skipMerge>true</skipMerge>
+							<outputFilename>softixx.main.min.js</outputFilename>
+						</configuration>
+						<goals>
+							<goal>minify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

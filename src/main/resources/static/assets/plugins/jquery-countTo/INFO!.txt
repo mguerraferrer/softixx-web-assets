@@ -1,0 +1,2 @@
+https://github.com/mhuggins/jquery-countTo
+https://github.com/mhuggins/jquery-countTo/blob/master/example.html

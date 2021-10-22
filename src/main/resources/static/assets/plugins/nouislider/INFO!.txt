@@ -1,0 +1,2 @@
+https://refreshless.com/nouislider/
+https://github.com/leongersen/noUiSlider

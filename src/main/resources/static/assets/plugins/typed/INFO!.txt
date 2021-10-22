@@ -1,0 +1,2 @@
+https://mattboldt.com/demos/typed-js/
+https://github.com/mattboldt/typed.js/

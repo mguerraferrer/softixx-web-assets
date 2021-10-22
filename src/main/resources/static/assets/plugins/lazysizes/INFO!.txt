@@ -1,0 +1,46 @@
+https://github.com/aFarkas/lazysizes
+
+##### IMPORTANT! #####
+For responsive images support you must use either use a full polyfill like picturefill (https://github.com/scottjehl/picturefill) or use the extreme lightweight partial respimg polyfill plugin (https://github.com/aFarkas/lazysizes/blob/gh-pages/plugins/respimg) or use the Responsive Images as a Service extension. (https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/rias)
+
+
+How to use
+<script src="lazysizes.min.js" async=""></script>
+
+lazysizes does not need any JS configuration: Add the class "lazyload" to your images/iframes in conjunction with a data-src and/or data-srcset attribute. Optionally you can also add a src attribute with a low quality image:
+
+<!-- non-responsive: -->
+<img data-src="image.jpg" class="lazyload" />
+
+<!-- responsive example with automatic sizes calculation: -->
+<img data-sizes="auto" data-src="image2.jpg" data-srcset="image1.jpg 300w, image2.jpg 600w, image3.jpg 900w" class="lazyload" />
+	
+<!-- iframe example -->
+<iframe frameborder="0" class="lazyload" allowfullscreen="" data-src="//www.youtube.com/embed/ZfV-aYdU4uE"> </iframe>
+
+Add the class lazyload to all img and iframe elements, which should be loaded lazy. Instead of a src or srcset attribute use a data-src or data-srcset attribute:
+
+<img data-src="image.jpg" class="lazyload" />
+<!-- retina optimized image: -->
+<img data-srcset="responsive-image1.jpg 1x, responsive-image2.jpg 2x" class="lazyload" />
+
+lazysizes supports setting the sizes attribute automatically, corresponding to the current size of your image - just set the value of data-sizes to auto.
+<img data-sizes="auto" data-srcset="responsive-image1.jpg 300w, responsive-image2.jpg 600w, responsive-image3.jpg 900w" class="lazyload" />
+
+Simple pattern
+Add the class lazyload and simply omit the src attribute or add a data uri as fallback src.
+
+<!--  responsive adaptive example -->
+<img class="lazyload" data-srcset="image.jpg 1x, image2.jpg 2x" alt="my image" />
+
+<!--  retina optimized example -->
+<img class="lazyload" data-srcset="progressive-image.jpg 1x, progressive-image2.jpg 2x" alt="my image" />
+
+<!-- or non-responsive: -->
+<img data-src="image.jpg" class="lazyload" />
+
+Combine data-srcset with data-src
+
+In case you want to use responsive images for supporting browsers, but don't want to include a polyfill, simply combine your data-srcset with a data-src attribute.
+<!-- responsive example: -->
+<img data-sizes="auto" data-src="image3.jpg" data-srcset="image3.jpg 600w, image1.jpg 220w, image2.jpg 300w, image3.jpg 600w, image4.jpg 900w" class="lazyload" />

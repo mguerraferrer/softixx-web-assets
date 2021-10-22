@@ -1,0 +1,2 @@
+https://animate.style/
+https://github.com/animate-css/animate.css

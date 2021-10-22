@@ -1,0 +1,2 @@
+https://thorst.github.io/jquery-idletimer/index.html
+https://github.com/thorst/jquery-idletimer

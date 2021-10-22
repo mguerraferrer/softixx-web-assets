@@ -1,0 +1,8 @@
+https://github.com/twitter/typeahead.js
+Download zipball of latest release -> http://twitter.github.com/typeahead.js/releases/latest/typeahead.js.zip
+
+bloodhound.min.js (standalone suggestion engine)
+typeahead.jquery.min.js (standalone UI view)
+typeahead.bundle.min.js (bloodhound.min.js + typeahead.jquery.min.js)
+
+Note: both bloodhound.min.js and typeahead.jquery.min.js have a dependency on jQuery 1.9+.

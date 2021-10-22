@@ -1,0 +1,2 @@
+https://jqueryniceselect.hernansartorio.com/
+https://github.com/hernansartorio/jquery-nice-select

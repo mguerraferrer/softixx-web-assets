@@ -1,0 +1,2 @@
+http://anthonyterrien.com/demo/knob/
+https://github.com/aterrien/jQuery-Knob
