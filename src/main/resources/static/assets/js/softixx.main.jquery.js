@@ -2991,7 +2991,7 @@ function isChecked(pElementId) {
 
 /* Cambia la clase de un checkbox (switchery plugin) */
 function switchery(pElementId) {
-	const elem = document.findById(pElementId);
+	const elem = document.getElementById(pElementId);
     return new Switchery(elem, {color: '#0f99f3'});
 }
 
