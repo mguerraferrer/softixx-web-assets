@@ -1679,12 +1679,26 @@ function iziToastError(message, position = null) {
 
 /**
  * izziToast (with image) notification
+ * @param image - Image to display
  * @param message - Display message
  * @param position - Position of the notification
  */
 function iziToastWithImage(image, message, position = null, css = null) {
     const cssClass = css || 'iziToast iziToast-dark';
     const iziToastData = {...$_IZI_TOAST.instanceImg(message, cssClass, image, position)};
+    iziToastShow(iziToastData);
+}
+
+/**
+ * izziToast (with image base64) notification
+ * @param image - Base64 image to display
+ * @param message - Display message
+ * @param position - Position of the notification
+ */
+function iziToastWithImageBase64(image, message, position = null, css = null) {
+    const cssClass = css || 'iziToast iziToast-dark';
+    const imgB64 = 'data:image/png;base64,' + image;
+    const iziToastData = {...$_IZI_TOAST.instanceImg(message, cssClass, imgB64, position)};
     iziToastShow(iziToastData);
 }
 
